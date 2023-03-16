@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/mystyle.css">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="../js/jquery-3.6.4.min.js"></script> <!-- 외부스트립트는 별도로 하나 선언해줘야한다 -->
+<script type="text/javascript">
+	function proc1() {
+		// id = result1 요소를 검색하여 Hellow를 출력한다.
+		//document.querySelector('#result1').innerHTML = "<h1>Hellow</h1>"
+		$('#result1').html('<h1>Hellow</h1>');
+	}
+	
+	//안만들어진 상태에서 btn2를 호출해버리면 오류가 발생한다 -> window.onload
+	/* window.onload = function() {
+		$('#btn2').on('click', function() {
+			
+		}) */
+		 
+	  /*  window.onload  = () => {
+		$('#btn2').on('click', () => {
+			$('#result2').html('<h1>안녕~~~</h1>');
+		}) 	
+	}  */
+	
+	$(document).ready(() => {
+		// 버튼을 클릭하면
+		$('#btn2').on('click', () => {
+			$('#result2').html('<h1>안녕~~~</h1>');
+		})
+	})
+	
+	/* $(document).ready(function() {
+		// 버튼을 클릭하면
+		$('#btn2').on('click', function() {
+			$('#result2').html('<h1>안녕~~~</h1>');
+		})
+	}) */
+	
+</script>
+</head>
+<body>
+
+<div class="box">
+	<p>
+	버튼의 이벤트 핸들러 설정 방법<br>
+	&lt;input type="button" value="확인" onclick="proc1()"><br>
+	</p>
+		
+	<input type="button" value="확인" onclick="proc1()"><br>
+	<br><br>
+	<div class="result" id="result1"></div>
+</div>
+
+<div class="box">
+	<p>
+	버튼의 이벤트 핸들러 설정 방법<br>
+	jQuery 방식으로 onclick 이벤트를 설정 <br>
+	$('#btn2').on('click', function(){})<br>
+	</p>
+		
+	<input type="button" value="확인" id="btn2"><br>
+	<br><br>
+	<div class="result" id="result2"></div>
+</div>
+</body>
+</html>
