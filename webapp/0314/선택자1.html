@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/mystyle.css">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="../js/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+	/* function clickhide(item) {
+		//$(item).hide();
+		$(item).css('display', 'none');
+	} */
+	// 람다형식
+	clickhide = (item) => {
+		// 실행 불가능
+		// item.css('display', 'none');
+		
+		// 실행 가능
+		item.style.display = 'none';
+		
+		
+		// 실행가능
+		//$(item).hide();
+		//$(item).css('display', 'none');
+	}
+	
+	//  $( function() {})
+	$(document).ready(() => {
+		$('#btn1').on('click', () => {
+			//전체 배경색을 변경 -> id='result1' 배경색 변경
+			//$('*').css('backgroundColor', 'yellow');
+			$('#result1').css('backgroundColor', 'yellow');
+			
+	        // h1요소의 글자색을 파랑 
+	        $('#result1 h1').css('color', 'blue');
+	        
+	        
+		    //id가 para인 요소의 글자색은 녹색
+		    $('#para').css('color', 'green');
+		    
+		    //class 가 sample요소의 글자색은 빨강 
+		    $('.sample').css('color', 'red');
+		});
+		
+		// document 에서 얻어온 객체 -> dom Object, 여기에 $를 붙이면 jQuery 변수가 됌
+		$('#result3 h1').on('click', function() {
+			// this는 dom 객체변수 실행 가능
+			//$(this).css('display', 'none');
+			this.style.display = 'none';
+			
+			//this는 dom 객체변수 - jQuery 메서드 css, hide() 호출할 수 없다.
+			// 실행 불가능
+			//this.css('display', 'none');
+			//this.hide();
+			//$(this).style.display = 'none';
+			
+			// 실행 가능
+			//$(this).css('display', 'none');
+			//this.hide();
+		});
+	})
+</script>
+</head>
+<body>
+
+<div class="box">
+	<p>
+	h1태그 각각에 onclick = "clickhide(this)" 를 설정하여 함수를 호출한다 <br>
+	&lt;h1 onclick = "clickhide(this)"> 클릭하면 사라집니다1 &lt;/h1> <br>
+	</p>
+		
+	<input type="button" value="확인" id="btn1"><br>
+	<br><br>
+	<div class="result" id="result1">
+		<h1> 제목입니다 </h1>
+		<h2 id="para"> 작은 제목입니다 </h2>
+		<h2 class="sample"> 샘플입니다 </h2>
+	</div>
+</div>
+
+<div class="box">
+	<p>
+	</p>
+		
+	<div class="result" id="result2">
+		<!-- script 방식은 onclick="clickhide(this)" 가 전부 필요하다 -> this는 자기가 클릭했다는 걸 의미해줌 -->
+		<h1 onclick="clickhide(this)"> 클릭하면 사라집니다1 </h1>
+		<h1 onclick="clickhide(this)"> 클릭하면 사라집니다2 </h1>
+		<h1 onclick="clickhide(this)"> 클릭하면 사라집니다3 </h1>
+		<h1 onclick="clickhide(this)"> 클릭하면 사라집니다4 </h1>
+		<h1 onclick="clickhide(this)"> 클릭하면 사라집니다5 </h1>
+		<h1 onclick="clickhide(this)"> 클릭하면 사라집니다6 </h1>
+		<h1 onclick="clickhide(this)"> 클릭하면 사라집니다7 </h1>
+		<h1 onclick="clickhide(this)"> 클릭하면 사라집니다8 </h1>
+		<h1 onclick="clickhide(this)"> 클릭하면 사라집니다9 </h1>
+		<h1 onclick="clickhide(this)"> 클릭하면 사라집니다10 </h1>
+	</div>
+</div>
+
+<div class="box">
+	<p>
+	jQuery에서 h1태그를 검색하여 이벤트 핸들러를 설정 <br>
+	</p>
+		
+	<div class="result" id="result3">
+		<h1> 클릭하면 사라집니다1 </h1>
+		<h1> 클릭하면 사라집니다2 </h1>
+		<h1> 클릭하면 사라집니다3 </h1>
+		<h1> 클릭하면 사라집니다4 </h1>
+		<h1> 클릭하면 사라집니다5 </h1>
+		<h1> 클릭하면 사라집니다6 </h1>
+		<h1> 클릭하면 사라집니다7 </h1>
+		<h1> 클릭하면 사라집니다8 </h1>
+		<h1> 클릭하면 사라집니다9 </h1>
+		<h1> 클릭하면 사라집니다10 </h1>
+	</div>
+</div>
+</body>
+</html>
