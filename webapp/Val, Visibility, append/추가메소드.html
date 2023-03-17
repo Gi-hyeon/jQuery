@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/mystyle.css">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width: 50px;
+		height: 50px;
+	}
+	p{
+		/* 주석처리해도  */
+		/* border: 1px solid lightblue; */
+		padding: 5px;
+	}
+</style>
+<script src="../js/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){ 
+		
+		// append, prepend 테두리 안에 생긴다.
+		
+		$('#append').on('click', function() {
+			vimg = $('<img src="../images/dog1.jpg" alt="">');
+			
+			//$('#result1').append($(vimg));
+			$('#p1').append(vimg);
+			//$(vimg).appendTo('#p1');
+		})
+		
+		$('#prepend').on('click', function() {
+			vimg = $('<img src="../images/dog2.jpg" alt="">');
+			
+			//$('#result1').prepend($(vimg));
+			$('#p1').prepend(vimg);
+			//$(vimg).prependTo('#p1');
+		})
+		
+		// before, after 는 테두리 밖에 생긴다
+		
+		$('#before').on('click', function() {
+			vimg = $('<img src="../images/dog1.jpg" alt="">');
+			
+			$('#p2').before(vimg);
+			//$(vimg).insertBefore('#p2');
+		})
+		
+		$('#after').on('click', function() {
+			vimg = $('<img src="../images/dog1.jpg" alt="">');
+			
+			$('#p2').after(vimg);
+			//$(vimg).insertAfter('#p2');
+		})
+		
+		$('.pp').on('click', function() {
+			// 내가 클릭한 .pp 태그를 가져옴
+			tvalue = $(this).attr('title');
+			vimg = $('<img src="../images/'+ tvalue +'.jpg" alt="">');
+			
+			$(this).append(vimg);
+		})
+		
+	});
+	
+</script>
+</head>
+<body>
+
+<div class="box">
+	<p>
+	버튼을 클릭하면 이미지를 만들어서 id="result1" 요소에 추가한다.<br>
+	append / appendTo <br>
+	prepend / prependTo <br>
+	
+	</p>
+		
+	<input type="button" value="뒤로추가" id="append"><br>
+	<input type="button" value="앞으로추가" id="prepend"><br>
+	<br><br>
+	<div class="result" id="result1"></div>
+	<p class="pp" id="p1" title="개">개</p>
+</div>
+
+
+<div class="box">
+	<p>
+	이미지를 만들어서 id="result2" 요소에 추가한다.
+	before / insertBefore <br>
+	after / insertAfter <br>
+	
+	</p>
+		
+	<input type="button" value="앞으로추가" id="before"><br>
+	<input type="button" value="뒤로추가" id="after"><br>
+	<br><br>
+	<div class="result" id="result2"></div>
+	<p class="pp" id="p2" title="dog1">개</p>
+	<p class="pp" title="호랑이">호랑이</p>
+	<p class="pp" title="펭귄">펭귄</p>
+</div>
+</body>
+</html>
