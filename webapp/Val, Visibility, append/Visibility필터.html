@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/mystyle.css">
+<title>Insert title here</title>
+<style type="text/css">
+.visible, .hidden{
+	height: 50px;
+}
+</style>
+<script src="../js/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+	window.onload=function(){
+		$('#visible').on('click', function() {
+			//visi = $('#result1 p:visible').text();
+			str = "";
+			$('#result1 p:visible').each(function() {
+				str += $(this).text() + "<br>";
+			})
+			
+			//$('.visible').html(visi);
+			$('.visible').html(str);
+			
+		});
+		
+		$('#hidden').on('click', function() {
+			//val() -> input, text() -> 태그 사이 텍스트 내용, html()
+			//attr('name'), attr('속성명') -> 속성 가져옴
+			//hid = $('#result1 p:hidden').text();
+			
+			str = "";
+			$('#result1 p:hidden').each(function() {
+				str += $(this).text() + "<br>";
+			})
+			
+			$('.hidden').html(str);			
+		});
+	}
+</script>
+</head>
+<body>
+<div class="box">
+	<p>
+	</p>
+		
+	<input type="button" value="visible" id="visible">
+	<input type="button" value="hidden" id="hidden"><br>
+	<br><br>
+	<div class="result" id="result1">
+		<p> 보이는 문단</p>
+		<p style="visibility:hidden;">숨겨진 문단</p>
+		<p style="display:none;"> 자리를 차지 하지 못한 문단 </p>
+		<p style="opacity:0;"> 투명한 문단</p>
+	</div>
+	
+	<div class="visible"></div>
+	<div class="hidden"></div>
+</div>
+
+
+</body>
+</html>
