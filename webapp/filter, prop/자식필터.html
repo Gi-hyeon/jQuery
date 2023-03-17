@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/mystyle.css">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		border: 1px solid lightblue;
+	}
+	td{
+		width: 250px;
+		height: 50px;
+		text-align: center;
+	}
+</style>
+<script src="../js/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+	proc1 = () => {
+		//$('tr:first-child td:first-child').css('background', '#C3E7FA');
+		/* $('tr:first-child').css('background', '#C3E7FA');
+		$('tr:nth-child(2)').css('background', '#ACF3FF');
+		$('tr:nth-child(3)').css('background', '#93DAFF');
+		$('td:last-child').css('background', '#87CEFA');
+		
+		$('tr:first-child').css('background', 'black'); */
+		
+		$('td:first-child').css('background', '#C3E7FA');
+		$('td:nth-child(2)').css('background', '#ACF3FF');
+		$('td:nth-child(3)').css('background', '#93DAFF');
+		$('td:last-child').css('background', '#87CEFA');
+		
+		/* td를 줬으면 td로 줘야지 td하다가 tr black으로 하면 안바뀜 */
+		$('tr:first-child td').css('background', 'black');
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+	<p>
+	</p>
+		
+	<input type="button" value="확인" onclick="proc1()"><br>
+	<br><br>
+	<div class="result" id="result1">
+		<table border="1">
+			<tr>
+				<td>일</td>
+				<td>이</td>
+				<td>삼</td>
+				<td>사</td>
+			</tr>
+			
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</div>
+</body>
+</html>
