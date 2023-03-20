@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/mystyle.css">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width: 100px;
+		height: 100px; 
+	}
+</style>
+<script src="../js/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#btn1').on('click', function() {
+			$('img').attr('title', '그림1');
+		})	
+	})
+</script>
+</head>
+<body>
+
+<div class="box">
+	<p>
+	</p>
+		
+	<input type="button" value="확인" id="btn1"><br>
+	<br><br>
+	<div class="result" id="result1">
+		<img alt="dog1.jpg" src="../images/dog1.jpg">
+		<img alt="dog2.jpg" src="../images/dog2.jpg">
+		<img alt="dog3.jpg" src="../images/dog3.jpg">
+		<img alt="사자.jpg" src="../images/사자.jpg">
+		<img alt="사자2.jpg" src="../images/사자2.jpg">
+	</div>
+</div>
+</body>
+</html>
