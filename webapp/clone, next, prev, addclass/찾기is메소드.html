@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/mystyle.css">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="../js/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('p').on('click', function() {
+			vp = $(this).parent();
+			//alert($(vp).css('border'));
+			
+			if ($(vp).is('.result')) {
+				//alert('맞다');
+				
+				//복사본을 누르면 또 복사본이 생기게 만들 수 있다.
+				$(this).clone(true).appendTo(vp).css('color', 'red');
+			}else{
+				alert('작업대상이 아닙니다.');
+			}
+		})
+	})
+</script>
+</head>
+<body>
+
+<div class="box">
+	<p>
+	p태그를 클릭하면 부모가 result인지 비교<br>
+	맞다면 복사하면 부모에 붙여넣기한다.<br>
+	틀리면 작업대상이 아닙니다를 출력
+	</p>
+		
+	<br>
+	
+	<div class="result" id="result1">
+		<p>무궁화 꽃이 피었습니다.</p>
+	</div>
+	
+	<div class="result" id="result2">
+		<p>사뿐히 즈려밞고 가시옵소서</p>
+	</div>
+	
+	<p>은주는 예쁘다?</p>
+	
+</div>
+</body>
+</html>
