@@ -14,8 +14,30 @@
 <script type="text/javascript">
 	$(function() {
 		$('#btn1').on('click', function() {
-			$('img').attr('title', '그림1');
-		})	
+			//$('img').attr('title', '그림1');
+			
+			$('img').attr('title', function() {
+				
+				// 해당 img의 src의 값을 가져온다
+				vsrc = $(this).attr('src');
+				
+				// 이름 부분을 추출한다 - slice
+				start = vsrc.lastIndexOf('/')+1; //뒤에서부터 확인해야함
+				end = vsrc.lastIndexOf('.'); 
+					
+				//slice(start, end)
+				vtitle = vsrc.slice(start, end);
+				
+				
+				console.log(vsrc, start, end);
+				return vtitle;
+			})
+		})
+		
+		$('img').on('click', function() {
+			$(this).removeAttr('title');
+			
+		})
 	})
 </script>
 </head>
